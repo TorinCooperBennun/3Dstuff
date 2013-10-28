@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
         sdl_fatal_error();
     }
 
-    if (cfg.init(800, 600) != NOT_FUCKED) {
+    if (cfg.init(0, 0, 0, 0) != NOT_FUCKED) {
         fatal_error("Engine initialisation was FUCKED.");
     }
 
