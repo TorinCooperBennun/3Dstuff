@@ -10,7 +10,7 @@ all: $(TITLE)
 $(TITLE): $(OBJS)
 	$(CPP) $(CPPFLAGS) -o $@ $^ $(LIBS)
 
-main.o: main.h engine.h errors.h
+main.o: engine.h errors.h utils.h
 engine.o: engine.h errors.h utils.h
 errors.o: errors.h utils.h
 utils.o: utils.h

@@ -1,12 +1,16 @@
-/* headers and shit */
-#include "main.h"
+#include <SDL2/SDL.h>
+#include "engine.h"
+#include "errors.h"
+#include "utils.h"
 
 
 engine_config cfg;
 
 
-/* entry point */
-int main(int argc, char **argv)
+/* main(int argc, char *argv[])
+ * Entry point
+ */
+int main(int argc, char *argv[])
 {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         sdl_fatal_error();
@@ -15,6 +19,8 @@ int main(int argc, char **argv)
     if (cfg.init(800, 600) != NOT_FUCKED) {
         fatal_error("Engine initialisation was FUCKED.");
     }
+
+    quit_all();
 
     return 0;
 }
