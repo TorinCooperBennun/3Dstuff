@@ -1,4 +1,10 @@
+/* Standard libraries */
+#include <iostream>
+
+/* SDL */
 #include <SDL2/SDL.h>
+
+/* Local headers */
 #include "errors.h"
 #include "utils.h"
 
@@ -8,7 +14,7 @@
  */
 void fatal_error(const char *str)
 {
-    fprintf(stderr, "%s\n", str);
+    std::cerr << str << std::endl;
     quit_all();
     exit(1);
 }

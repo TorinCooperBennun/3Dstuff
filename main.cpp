@@ -1,4 +1,7 @@
+/* SDL */
 #include <SDL2/SDL.h>
+
+/* Local headers */
 #include "engine.h"
 #include "errors.h"
 #include "utils.h"
@@ -20,7 +23,10 @@ int main(int argc, char *argv[])
         fatal_error("Engine initialisation was FUCKED.");
     }
 
-    quit_all();
+    if (cfg.loop() != NOT_FUCKED) {
+        fatal_error("Loop FUCKED UP.");
+    }
 
+    quit_all();
     return 0;
 }

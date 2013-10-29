@@ -1,6 +1,6 @@
 CPP      = g++
 CPPFLAGS = -Wall -g -O0
-LIBS     = -lSDL2main -lSDL2
+LIBS     = -lSDL2 -lGLEW -lGLU -lGL
 
 TITLE    = bullshit
 OBJS     = main.o engine.o errors.o utils.o

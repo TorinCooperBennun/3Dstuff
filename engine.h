@@ -2,6 +2,10 @@
 #define ENGINE_H
 
 
+/* OpenGL */
+#include <GL/glew.h>
+
+/* SDL */
 #include <SDL2/SDL.h>
 
 
@@ -19,12 +23,19 @@ class engine_config
 
     private:
         bool inited;
+
         SDL_Window *window;
         SDL_Renderer *renderer;
+        SDL_GLContext gl_context;
+
         int width;
         int height;
         int frames_sec;
         int ticks_sec;
+
+        GLuint shader_program;
+
+        GLuint load_shaders(const char *vertex_shader, const char *fragment_shader);
 };
 
 
